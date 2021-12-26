@@ -9,7 +9,7 @@ const $PORT=process.env.PORT||8000;
 const MONGO=process.env.MONGO;
 app.use(bp.json())
 app.use(cors())
-mongoose.connect(MONGO',{
+mongoose.connect(MONGO,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex:true
