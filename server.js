@@ -1,4 +1,6 @@
 const express=require('express')
+const dotenv = require("dotenv");
+dotenv.config();
 const bp=require('body-parser')
 const cors=require('cors')
 const mongoose=require('mongoose')
@@ -17,7 +19,7 @@ mongoose.connect(MONGO,{
 mongoose.Promise=global.Promise;
 mongoose.connection.once('open',()=>{
     console.log('mongo started')
-    app.listen($PORT,function() {
+    app.listen(8000,function() {
         console.log('listening on port 8000')
     })
 }).on('error',(err)=>{
