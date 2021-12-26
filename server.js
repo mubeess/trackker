@@ -9,7 +9,7 @@ const $PORT=process.env.PORT||8000;
 const MONGO=process.env.MONGO;
 app.use(bp.json())
 app.use(cors())
-mongoose.connect('mongodb+srv://mubarak:64942224@trackerapp.wzus6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+mongoose.connect(MONGO',{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex:true
