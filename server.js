@@ -7,7 +7,7 @@ const mongoose=require('mongoose')
 const User=require('./model/User')
 
 const app=express()
-const $PORT=process.env.PORT||8000;
+const PORT=process.env.PORT||8000;
 const MONGO=process.env.MONGO;
 app.use(bp.json())
 app.use(cors())
@@ -19,7 +19,7 @@ mongoose.connect(MONGO,{
 mongoose.Promise=global.Promise;
 mongoose.connection.once('open',()=>{
     console.log('mongo started')
-    app.listen(8000,function() {
+    app.listen(PORT,function() {
         console.log('listening on port 8000')
     })
 }).on('error',(err)=>{
