@@ -67,10 +67,10 @@ app.get('/user/:email',(req,res)=>{
 })
 
 //update location
-app.get('/update/:location/:email/:ind',(req,res)=>{
-    const {location,email,ind}=req.params;
-    const longitude=location.split(',')[0]
-    const latitude=location.split(',')[1]
+app.post('/update',(req,res)=>{
+    const {longitude,email,ind,latitude}=req.body;
+    // const longitude=location.split(',')[0]
+    // const latitude=location.split(',')[1]
     User.findOne({email:email})
     .then(user=>{
         const cars=user.cars;
