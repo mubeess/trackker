@@ -19,13 +19,15 @@ mongoose.connect(MONGO,{
 mongoose.Promise=global.Promise;
 mongoose.connection.once('open',()=>{
     console.log('mongo started')
-    app.listen(PORT,function() {
+    app.listen(8000,function() {
         console.log('listening on port 8000')
     })
 }).on('error',(err)=>{
     console.log(err)
 })
-
+app.get('/',(req,res)=>{
+res.send('Success')
+})
 app.post('/register',(req,res)=>{
     const {name,email,password,plate,longitude,latitude,driver}=req.body;
     const user=new User({
@@ -133,3 +135,4 @@ app.get('/location/:email',(req,res)=>{
 
 
 // ||'mongodb://localhost/tracker'
+// https://trackerrapp.herokuapp.com
