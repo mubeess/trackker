@@ -19,7 +19,7 @@ mongoose.connect(MONGO,{
 mongoose.Promise=global.Promise;
 mongoose.connection.once('open',()=>{
     console.log('mongo started')
-    app.listen(8000,function() {
+    app.listen(PORT,function() {
         console.log('listening on port 8000')
     })
 }).on('error',(err)=>{
